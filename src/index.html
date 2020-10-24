@@ -1,0 +1,2273 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Locally Widget</title>
+
+  <style>
+    #size-thumbnails {
+      display: flex;
+    }
+    #colour-thumbnails {
+      display: none;
+    }
+    .product-size__thumbnail-container {
+        position: relative;
+        cursor: pointer;
+        width: 43px;
+        height: 43px;
+        border: 1px solid #000;
+        text-align: center;
+        font: "Avenir LT W01 65 Medium",arial,sans-serif;
+        margin: 0 8px 8px 0;
+    }
+    .product-size__thumbnail-container .product-size__thumbnail-container__primary-size {
+      display: inline-block;
+      padding: 12px 0;
+      line-height: initial !important;
+    }
+    .product-size__thumbnail-container.selected,
+    .product-size__thumbnail-container:hover {
+      background-color: #000;
+      color: #fff;
+    }
+  </style>
+  <script>
+    function clickedSize(num) {
+      document.querySelectorAll("#size-thumbnails > .product-size__thumbnail-container").forEach(el => el.classList.remove("selected"));
+      document.querySelectorAll("#size-thumbnails > .product-size__thumbnail-container").forEach((el, index) => {
+        if (num === index) {
+          document.querySelectorAll("#size-thumbnails > .product-size__thumbnail-container")[num].classList.add("selected")
+        }
+      });
+    }
+  </script>
+</head>
+
+<body>
+  <div>
+    <div id="size-thumbnails" class="thumbnail_count_8">
+      <div class="product-size__thumbnail-container Insulated Jackets less-than-5" data-primary-size="XS" data-secondary-size="" data-units="" data-stock="Less Than 5 Left" data-status="" data-qty="4" data-sku="435619" data-model-no="24108" data-upc="686487493780" data-p2p-dealers="0" onclick="javascript: clickedSize(0);">
+        <span class="product-size__thumbnail-container__primary-size" title="Less Than 5 Left">XS</span>
+        <span class="product-size__thumbnail-container__x-line-left"></span>
+        <span class="product-size__thumbnail-container__x-line-right"></span>
+      </div>
+      <div class="product-size__thumbnail-container Insulated Jackets in-stock" data-primary-size="S" data-secondary-size="" data-units="" data-stock="In Stock" data-status="" data-qty="10" data-sku="435617" data-model-no="24108" data-upc="686487493766" data-p2p-dealers="1" onclick="javascript: clickedSize(1);">
+        <span class="product-size__thumbnail-container__primary-size" title="In Stock">S</span>
+        <span class="product-size__thumbnail-container__x-line-left"></span>
+        <span class="product-size__thumbnail-container__x-line-right"></span>
+      </div>
+      <div class="product-size__thumbnail-container Insulated Jackets in-stock" data-primary-size="M" data-secondary-size="" data-units="" data-stock="In Stock" data-status="" data-qty="18" data-sku="435616" data-model-no="24108" data-upc="686487493759" data-p2p-dealers="1" onclick="javascript: clickedSize(2);">
+        <span class="product-size__thumbnail-container__primary-size" title="In Stock">M</span>
+        <span class="product-size__thumbnail-container__x-line-left"></span>
+        <span class="product-size__thumbnail-container__x-line-right"></span>
+      </div>
+      <div class="product-size__thumbnail-container Insulated Jackets in-stock" data-primary-size="L" data-secondary-size="" data-units="" data-stock="In Stock" data-status="" data-qty="11" data-sku="435615" data-model-no="24108" data-upc="686487493742" data-p2p-dealers="1" onclick="javascript: clickedSize(3);">
+        <span class="product-size__thumbnail-container__primary-size" title="In Stock">L</span>
+        <span class="product-size__thumbnail-container__x-line-left"></span>
+        <span class="product-size__thumbnail-container__x-line-right"></span>
+      </div>
+      <div class="product-size__thumbnail-container Insulated Jackets in-stock" data-primary-size="XL" data-secondary-size="" data-units="" data-stock="In Stock" data-status="" data-qty="6" data-sku="435618" data-model-no="24108" data-upc="686487493773" data-p2p-dealers="0" onclick="javascript: clickedSize(4);">
+        <span class="product-size__thumbnail-container__primary-size" title="In Stock">XL</span>
+        <span class="product-size__thumbnail-container__x-line-left"></span>
+        <span class="product-size__thumbnail-container__x-line-right"></span>
+      </div>
+      <div class="product-size__thumbnail-container Insulated Jackets in-stock" data-primary-size="XXL" data-secondary-size="" data-units="" data-stock="In Stock" data-status="" data-qty="5" data-sku="435620" data-model-no="24108" data-upc="686487493797" data-p2p-dealers="0" onclick="javascript: clickedSize(5);">
+        <span class="product-size__thumbnail-container__primary-size" title="In Stock">XXL</span>
+        <span class="product-size__thumbnail-container__x-line-left"></span>
+        <span class="product-size__thumbnail-container__x-line-right"></span>
+      </div>
+      <div class="product-size__thumbnail-container Insulated Jackets less-than-5" data-primary-size="XXXL" data-secondary-size="" data-units="" data-stock="Less Than 5 Left" data-status="" data-qty="2" data-sku="435622" data-model-no="24108" data-upc="686487493803" data-p2p-dealers="0" onclick="javascript: clickedSize(6);">
+        <span class="product-size__thumbnail-container__primary-size" title="Less Than 5 Left">XXXL</span>
+        <span class="product-size__thumbnail-container__x-line-left"></span>
+        <span class="product-size__thumbnail-container__x-line-right"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- WIDGET ROOT ELEMENTS -->
+  <div id="locally-root"></div>
+  <div data-widget-host="habitat"></div>
+  <script async src="/bundle.js"></script>
+
+  <div id="colour-thumbnails" class="thumbnail_count_5">
+    <div class="product-colour__thumbnail-container selected in-stock" data-colourcd="29113" data-name="Elytron" data-colour-hexcode="868325" data-small-image="https://images-dynamic-arcteryx.imgix.net/F20/450x625/Atom-LT-Hoody-Elytron.png?auto=format" data-large-image="https://images-dynamic-arcteryx.imgix.net/F20/1350x1710/Atom-LT-Hoody-Elytron.jpg?auto=format&amp;w=1350">
+      <img src="https://images-dynamic-arcteryx.imgix.net/F20/55x70/Atom-LT-Hoody-Elytron.png?auto=format" alt="Atom LT Hoody Men's Elytron">
+      <div class="product-colour__thumbnail-container__name">
+        <span style="color: 868325">Elytron</span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    var digitalData = {
+      websiteSettings: {
+        defaultCulture: "en-CA"
+      }
+    };
+    var structuredData = [
+      {
+        "@context": "http://schema.org/",
+        "@type": "Product",
+        "name": "Atom LT Hoody Men's",
+        "image": [
+          "https://images-dynamic-arcteryx.imgix.net/F20/1350x1710/Atom-LT-Hoody-Elytron.jpg?auto=format&amp;w=1350"
+        ],
+        "description": "Light, versatile synthetically insulated hoody works as a midlayer and standalone. Atom Series: Synthetic insulated midlayers. | LT: Lightweight.",
+        "mpn": "24108",
+        "sku": "435559",
+        "gtin12": "686487493605",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "",
+          "reviewCount": ""
+        },
+        "color": "Dracaena",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "CAD",
+          "price": "320.00",
+          "itemCondition": "http://schema.org/NewCondition",
+          "availability": "",
+          "url": "http://arcteryx.com/ca/en/shop/mens/atom-lt-hoody"
+        }
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Product",
+        "name": "Atom LT Hoody Men's",
+        "image": [
+          "https://images-dynamic-arcteryx.imgix.net/F20/1350x1710/Atom-LT-Hoody-Elytron.jpg?auto=format&amp;w=1350"
+        ],
+        "description": "Light, versatile synthetically insulated hoody works as a midlayer and standalone. Atom Series: Synthetic insulated midlayers. | LT: Lightweight.",
+        "mpn": "24108",
+        "sku": "435560",
+        "gtin12": "686487493612",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "",
+          "reviewCount": ""
+        },
+        "color": "Dracaena",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "CAD",
+          "price": "320.00",
+          "itemCondition": "http://schema.org/NewCondition",
+          "availability": "",
+          "url": "http://arcteryx.com/ca/en/shop/mens/atom-lt-hoody"
+        }
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Product",
+        "name": "Atom LT Hoody Men's",
+        "image": [
+          "https://images-dynamic-arcteryx.imgix.net/F20/1350x1710/Atom-LT-Hoody-Elytron.jpg?auto=format&amp;w=1350"
+        ],
+        "description": "Light, versatile synthetically insulated hoody works as a midlayer and standalone. Atom Series: Synthetic insulated midlayers. | LT: Lightweight.",
+        "mpn": "24108",
+        "sku": "435561",
+        "gtin12": "686487493629",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "",
+          "reviewCount": ""
+        },
+        "color": "Dracaena",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "CAD",
+          "price": "320.00",
+          "itemCondition": "http://schema.org/NewCondition",
+          "availability": "",
+          "url": "http://arcteryx.com/ca/en/shop/mens/atom-lt-hoody"
+        }
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Product",
+        "name": "Atom LT Hoody Men's",
+        "image": [
+          "https://images-dynamic-arcteryx.imgix.net/F20/1350x1710/Atom-LT-Hoody-Elytron.jpg?auto=format&amp;w=1350"
+        ],
+        "description": "Light, versatile synthetically insulated hoody works as a midlayer and standalone. Atom Series: Synthetic insulated midlayers. | LT: Lightweight.",
+        "mpn": "24108",
+        "sku": "435562",
+        "gtin12": "686487493636",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "",
+          "reviewCount": ""
+        },
+        "color": "Dracaena",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "CAD",
+          "price": "320.00",
+          "itemCondition": "http://schema.org/NewCondition",
+          "availability": "",
+          "url": "http://arcteryx.com/ca/en/shop/mens/atom-lt-hoody"
+        }
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Product",
+        "name": "Atom LT Hoody Men's",
+        "image": [
+          "https://images-dynamic-arcteryx.imgix.net/F20/1350x1710/Atom-LT-Hoody-Elytron.jpg?auto=format&amp;w=1350"
+        ],
+        "description": "Light, versatile synthetically insulated hoody works as a midlayer and standalone. Atom Series: Synthetic insulated midlayers. | LT: Lightweight.",
+        "mpn": "24108",
+        "sku": "435563",
+        "gtin12": "686487493643",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "",
+          "reviewCount": ""
+        },
+        "color": "Dracaena",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "CAD",
+          "price": "320.00",
+          "itemCondition": "http://schema.org/NewCondition",
+          "availability": "",
+          "url": "http://arcteryx.com/ca/en/shop/mens/atom-lt-hoody"
+        }
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Product",
+        "name": "Atom LT Hoody Men's",
+        "image": [
+          "https://images-dynamic-arcteryx.imgix.net/F20/1350x1710/Atom-LT-Hoody-Elytron.jpg?auto=format&amp;w=1350"
+        ],
+        "description": "Light, versatile synthetically insulated hoody works as a midlayer and standalone. Atom Series: Synthetic insulated midlayers. | LT: Lightweight.",
+        "mpn": "24108",
+        "sku": "435564",
+        "gtin12": "686487493650",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "",
+          "reviewCount": ""
+        },
+        "color": "Dracaena",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "CAD",
+          "price": "320.00",
+          "itemCondition": "http://schema.org/NewCondition",
+          "availability": "",
+          "url": "http://arcteryx.com/ca/en/shop/mens/atom-lt-hoody"
+        }
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Product",
+        "name": "Atom LT Hoody Men's",
+        "image": [
+          "https://images-dynamic-arcteryx.imgix.net/F20/1350x1710/Atom-LT-Hoody-Elytron.jpg?auto=format&amp;w=1350"
+        ],
+        "description": "Light, versatile synthetically insulated hoody works as a midlayer and standalone. Atom Series: Synthetic insulated midlayers. | LT: Lightweight.",
+        "mpn": "24108",
+        "sku": "435566",
+        "gtin12": "686487493667",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "",
+          "reviewCount": ""
+        },
+        "color": "Dracaena",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "CAD",
+          "price": "320.00",
+          "itemCondition": "http://schema.org/NewCondition",
+          "availability": "",
+          "url": "http://arcteryx.com/ca/en/shop/mens/atom-lt-hoody"
+        }
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Product",
+        "name": "Atom LT Hoody Men's",
+        "image": [
+          "https://images-dynamic-arcteryx.imgix.net/F20/1350x1710/Atom-LT-Hoody-Elytron.jpg?auto=format&amp;w=1350"
+        ],
+        "description": "Light, versatile synthetically insulated hoody works as a midlayer and standalone. Atom Series: Synthetic insulated midlayers. | LT: Lightweight.",
+        "mpn": "24108",
+        "sku": "435567",
+        "gtin12": "686487493889",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "",
+          "reviewCount": ""
+        },
+        "color": "Kingfisher",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "CAD",
+          "price": "320.00",
+          "itemCondition": "http://schema.org/NewCondition",
+          "availability": "",
+          "url": "http://arcteryx.com/ca/en/shop/mens/atom-lt-hoody"
+        }
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Product",
+        "name": "Atom LT Hoody Men's",
+        "image": [
+          "https://images-dynamic-arcteryx.imgix.net/F20/1350x1710/Atom-LT-Hoody-Elytron.jpg?auto=format&amp;w=1350"
+        ],
+        "description": "Light, versatile synthetically insulated hoody works as a midlayer and standalone. Atom Series: Synthetic insulated midlayers. | LT: Lightweight.",
+        "mpn": "24108",
+        "sku": "435568",
+        "gtin12": "686487493896",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "",
+          "reviewCount": ""
+        },
+        "color": "Kingfisher",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "CAD",
+          "price": "320.00",
+          "itemCondition": "http://schema.org/NewCondition",
+          "availability": "",
+          "url": "http://arcteryx.com/ca/en/shop/mens/atom-lt-hoody"
+        }
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Product",
+        "name": "Atom LT Hoody Men's",
+        "image": [
+          "https://images-dynamic-arcteryx.imgix.net/F20/1350x1710/Atom-LT-Hoody-Elytron.jpg?auto=format&amp;w=1350"
+        ],
+        "description": "Light, versatile synthetically insulated hoody works as a midlayer and standalone. Atom Series: Synthetic insulated midlayers. | LT: Lightweight.",
+        "mpn": "24108",
+        "sku": "435569",
+        "gtin12": "686487493902",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "",
+          "reviewCount": ""
+        },
+        "color": "Kingfisher",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "CAD",
+          "price": "320.00",
+          "itemCondition": "http://schema.org/NewCondition",
+          "availability": "",
+          "url": "http://arcteryx.com/ca/en/shop/mens/atom-lt-hoody"
+        }
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Product",
+        "name": "Atom LT Hoody Men's",
+        "image": [
+          "https://images-dynamic-arcteryx.imgix.net/F20/1350x1710/Atom-LT-Hoody-Elytron.jpg?auto=format&amp;w=1350"
+        ],
+        "description": "Light, versatile synthetically insulated hoody works as a midlayer and standalone. Atom Series: Synthetic insulated midlayers. | LT: Lightweight.",
+        "mpn": "24108",
+        "sku": "435570",
+        "gtin12": "686487493919",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "",
+          "reviewCount": ""
+        },
+        "color": "Kingfisher",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "CAD",
+          "price": "320.00",
+          "itemCondition": "http://schema.org/NewCondition",
+          "availability": "",
+          "url": "http://arcteryx.com/ca/en/shop/mens/atom-lt-hoody"
+        }
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Product",
+        "name": "Atom LT Hoody Men's",
+        "image": [
+          "https://images-dynamic-arcteryx.imgix.net/F20/1350x1710/Atom-LT-Hoody-Elytron.jpg?auto=format&amp;w=1350"
+        ],
+        "description": "Light, versatile synthetically insulated hoody works as a midlayer and standalone. Atom Series: Synthetic insulated midlayers. | LT: Lightweight.",
+        "mpn": "24108",
+        "sku": "435571",
+        "gtin12": "686487493926",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "",
+          "reviewCount": ""
+        },
+        "color": "Kingfisher",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "CAD",
+          "price": "320.00",
+          "itemCondition": "http://schema.org/NewCondition",
+          "availability": "",
+          "url": "http://arcteryx.com/ca/en/shop/mens/atom-lt-hoody"
+        }
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Product",
+        "name": "Atom LT Hoody Men's",
+        "image": [
+          "https://images-dynamic-arcteryx.imgix.net/F20/1350x1710/Atom-LT-Hoody-Elytron.jpg?auto=format&amp;w=1350"
+        ],
+        "description": "Light, versatile synthetically insulated hoody works as a midlayer and standalone. Atom Series: Synthetic insulated midlayers. | LT: Lightweight.",
+        "mpn": "24108",
+        "sku": "435572",
+        "gtin12": "686487493933",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "",
+          "reviewCount": ""
+        },
+        "color": "Kingfisher",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "CAD",
+          "price": "320.00",
+          "itemCondition": "http://schema.org/NewCondition",
+          "availability": "",
+          "url": "http://arcteryx.com/ca/en/shop/mens/atom-lt-hoody"
+        }
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Product",
+        "name": "Atom LT Hoody Men's",
+        "image": [
+          "https://images-dynamic-arcteryx.imgix.net/F20/1350x1710/Atom-LT-Hoody-Elytron.jpg?auto=format&amp;w=1350"
+        ],
+        "description": "Light, versatile synthetically insulated hoody works as a midlayer and standalone. Atom Series: Synthetic insulated midlayers. | LT: Lightweight.",
+        "mpn": "24108",
+        "sku": "435574",
+        "gtin12": "686487493940",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "",
+          "reviewCount": ""
+        },
+        "color": "Kingfisher",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "CAD",
+          "price": "320.00",
+          "itemCondition": "http://schema.org/NewCondition",
+          "availability": "",
+          "url": "http://arcteryx.com/ca/en/shop/mens/atom-lt-hoody"
+        }
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Product",
+        "name": "Atom LT Hoody Men's",
+        "image": [
+          "https://images-dynamic-arcteryx.imgix.net/F20/1350x1710/Atom-LT-Hoody-Elytron.jpg?auto=format&amp;w=1350"
+        ],
+        "description": "Light, versatile synthetically insulated hoody works as a midlayer and standalone. Atom Series: Synthetic insulated midlayers. | LT: Lightweight.",
+        "mpn": "24108",
+        "sku": "435575",
+        "gtin12": "686487493810",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "",
+          "reviewCount": ""
+        },
+        "color": "Galactica",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "CAD",
+          "price": "320.00",
+          "itemCondition": "http://schema.org/NewCondition",
+          "availability": "",
+          "url": "http://arcteryx.com/ca/en/shop/mens/atom-lt-hoody"
+        }
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Product",
+        "name": "Atom LT Hoody Men's",
+        "image": [
+          "https://images-dynamic-arcteryx.imgix.net/F20/1350x1710/Atom-LT-Hoody-Elytron.jpg?auto=format&amp;w=1350"
+        ],
+        "description": "Light, versatile synthetically insulated hoody works as a midlayer and standalone. Atom Series: Synthetic insulated midlayers. | LT: Lightweight.",
+        "mpn": "24108",
+        "sku": "435576",
+        "gtin12": "686487493827",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "",
+          "reviewCount": ""
+        },
+        "color": "Galactica",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "CAD",
+          "price": "320.00",
+          "itemCondition": "http://schema.org/NewCondition",
+          "availability": "",
+          "url": "http://arcteryx.com/ca/en/shop/mens/atom-lt-hoody"
+        }
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Product",
+        "name": "Atom LT Hoody Men's",
+        "image": [
+          "https://images-dynamic-arcteryx.imgix.net/F20/1350x1710/Atom-LT-Hoody-Elytron.jpg?auto=format&amp;w=1350"
+        ],
+        "description": "Light, versatile synthetically insulated hoody works as a midlayer and standalone. Atom Series: Synthetic insulated midlayers. | LT: Lightweight.",
+        "mpn": "24108",
+        "sku": "435577",
+        "gtin12": "686487493834",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "",
+          "reviewCount": ""
+        },
+        "color": "Galactica",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "CAD",
+          "price": "320.00",
+          "itemCondition": "http://schema.org/NewCondition",
+          "availability": "",
+          "url": "http://arcteryx.com/ca/en/shop/mens/atom-lt-hoody"
+        }
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Product",
+        "name": "Atom LT Hoody Men's",
+        "image": [
+          "https://images-dynamic-arcteryx.imgix.net/F20/1350x1710/Atom-LT-Hoody-Elytron.jpg?auto=format&amp;w=1350"
+        ],
+        "description": "Light, versatile synthetically insulated hoody works as a midlayer and standalone. Atom Series: Synthetic insulated midlayers. | LT: Lightweight.",
+        "mpn": "24108",
+        "sku": "435578",
+        "gtin12": "686487493841",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "",
+          "reviewCount": ""
+        },
+        "color": "Galactica",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "CAD",
+          "price": "320.00",
+          "itemCondition": "http://schema.org/NewCondition",
+          "availability": "",
+          "url": "http://arcteryx.com/ca/en/shop/mens/atom-lt-hoody"
+        }
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Product",
+        "name": "Atom LT Hoody Men's",
+        "image": [
+          "https://images-dynamic-arcteryx.imgix.net/F20/1350x1710/Atom-LT-Hoody-Elytron.jpg?auto=format&amp;w=1350"
+        ],
+        "description": "Light, versatile synthetically insulated hoody works as a midlayer and standalone. Atom Series: Synthetic insulated midlayers. | LT: Lightweight.",
+        "mpn": "24108",
+        "sku": "435579",
+        "gtin12": "686487493858",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "",
+          "reviewCount": ""
+        },
+        "color": "Galactica",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "CAD",
+          "price": "320.00",
+          "itemCondition": "http://schema.org/NewCondition",
+          "availability": "",
+          "url": "http://arcteryx.com/ca/en/shop/mens/atom-lt-hoody"
+        }
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Product",
+        "name": "Atom LT Hoody Men's",
+        "image": [
+          "https://images-dynamic-arcteryx.imgix.net/F20/1350x1710/Atom-LT-Hoody-Elytron.jpg?auto=format&amp;w=1350"
+        ],
+        "description": "Light, versatile synthetically insulated hoody works as a midlayer and standalone. Atom Series: Synthetic insulated midlayers. | LT: Lightweight.",
+        "mpn": "24108",
+        "sku": "435580",
+        "gtin12": "686487493865",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "",
+          "reviewCount": ""
+        },
+        "color": "Galactica",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "CAD",
+          "price": "320.00",
+          "itemCondition": "http://schema.org/NewCondition",
+          "availability": "",
+          "url": "http://arcteryx.com/ca/en/shop/mens/atom-lt-hoody"
+        }
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Product",
+        "name": "Atom LT Hoody Men's",
+        "image": [
+          "https://images-dynamic-arcteryx.imgix.net/F20/1350x1710/Atom-LT-Hoody-Elytron.jpg?auto=format&amp;w=1350"
+        ],
+        "description": "Light, versatile synthetically insulated hoody works as a midlayer and standalone. Atom Series: Synthetic insulated midlayers. | LT: Lightweight.",
+        "mpn": "24108",
+        "sku": "435582",
+        "gtin12": "686487493872",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "",
+          "reviewCount": ""
+        },
+        "color": "Galactica",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "CAD",
+          "price": "320.00",
+          "itemCondition": "http://schema.org/NewCondition",
+          "availability": "",
+          "url": "http://arcteryx.com/ca/en/shop/mens/atom-lt-hoody"
+        }
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Product",
+        "name": "Atom LT Hoody Men's",
+        "image": [
+          "https://images-dynamic-arcteryx.imgix.net/F20/1350x1710/Atom-LT-Hoody-Elytron.jpg?auto=format&amp;w=1350"
+        ],
+        "description": "Light, versatile synthetically insulated hoody works as a midlayer and standalone. Atom Series: Synthetic insulated midlayers. | LT: Lightweight.",
+        "mpn": "24108",
+        "sku": "435583",
+        "gtin12": "686487494022",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "",
+          "reviewCount": ""
+        },
+        "color": "Rhapsody",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "CAD",
+          "price": "320.00",
+          "itemCondition": "http://schema.org/NewCondition",
+          "availability": "",
+          "url": "http://arcteryx.com/ca/en/shop/mens/atom-lt-hoody"
+        }
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Product",
+        "name": "Atom LT Hoody Men's",
+        "image": [
+          "https://images-dynamic-arcteryx.imgix.net/F20/1350x1710/Atom-LT-Hoody-Elytron.jpg?auto=format&amp;w=1350"
+        ],
+        "description": "Light, versatile synthetically insulated hoody works as a midlayer and standalone. Atom Series: Synthetic insulated midlayers. | LT: Lightweight.",
+        "mpn": "24108",
+        "sku": "435584",
+        "gtin12": "686487494039",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "",
+          "reviewCount": ""
+        },
+        "color": "Rhapsody",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "CAD",
+          "price": "320.00",
+          "itemCondition": "http://schema.org/NewCondition",
+          "availability": "",
+          "url": "http://arcteryx.com/ca/en/shop/mens/atom-lt-hoody"
+        }
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Product",
+        "name": "Atom LT Hoody Men's",
+        "image": [
+          "https://images-dynamic-arcteryx.imgix.net/F20/1350x1710/Atom-LT-Hoody-Elytron.jpg?auto=format&amp;w=1350"
+        ],
+        "description": "Light, versatile synthetically insulated hoody works as a midlayer and standalone. Atom Series: Synthetic insulated midlayers. | LT: Lightweight.",
+        "mpn": "24108",
+        "sku": "435585",
+        "gtin12": "686487494046",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "",
+          "reviewCount": ""
+        },
+        "color": "Rhapsody",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "CAD",
+          "price": "320.00",
+          "itemCondition": "http://schema.org/NewCondition",
+          "availability": "",
+          "url": "http://arcteryx.com/ca/en/shop/mens/atom-lt-hoody"
+        }
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Product",
+        "name": "Atom LT Hoody Men's",
+        "image": [
+          "https://images-dynamic-arcteryx.imgix.net/F20/1350x1710/Atom-LT-Hoody-Elytron.jpg?auto=format&amp;w=1350"
+        ],
+        "description": "Light, versatile synthetically insulated hoody works as a midlayer and standalone. Atom Series: Synthetic insulated midlayers. | LT: Lightweight.",
+        "mpn": "24108",
+        "sku": "435586",
+        "gtin12": "686487494053",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "",
+          "reviewCount": ""
+        },
+        "color": "Rhapsody",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "CAD",
+          "price": "320.00",
+          "itemCondition": "http://schema.org/NewCondition",
+          "availability": "",
+          "url": "http://arcteryx.com/ca/en/shop/mens/atom-lt-hoody"
+        }
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Product",
+        "name": "Atom LT Hoody Men's",
+        "image": [
+          "https://images-dynamic-arcteryx.imgix.net/F20/1350x1710/Atom-LT-Hoody-Elytron.jpg?auto=format&amp;w=1350"
+        ],
+        "description": "Light, versatile synthetically insulated hoody works as a midlayer and standalone. Atom Series: Synthetic insulated midlayers. | LT: Lightweight.",
+        "mpn": "24108",
+        "sku": "435587",
+        "gtin12": "686487494060",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "",
+          "reviewCount": ""
+        },
+        "color": "Rhapsody",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "CAD",
+          "price": "320.00",
+          "itemCondition": "http://schema.org/NewCondition",
+          "availability": "",
+          "url": "http://arcteryx.com/ca/en/shop/mens/atom-lt-hoody"
+        }
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Product",
+        "name": "Atom LT Hoody Men's",
+        "image": [
+          "https://images-dynamic-arcteryx.imgix.net/F20/1350x1710/Atom-LT-Hoody-Elytron.jpg?auto=format&amp;w=1350"
+        ],
+        "description": "Light, versatile synthetically insulated hoody works as a midlayer and standalone. Atom Series: Synthetic insulated midlayers. | LT: Lightweight.",
+        "mpn": "24108",
+        "sku": "435588",
+        "gtin12": "686487494077",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "",
+          "reviewCount": ""
+        },
+        "color": "Rhapsody",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "CAD",
+          "price": "320.00",
+          "itemCondition": "http://schema.org/NewCondition",
+          "availability": "",
+          "url": "http://arcteryx.com/ca/en/shop/mens/atom-lt-hoody"
+        }
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Product",
+        "name": "Atom LT Hoody Men's",
+        "image": [
+          "https://images-dynamic-arcteryx.imgix.net/F20/1350x1710/Atom-LT-Hoody-Elytron.jpg?auto=format&amp;w=1350"
+        ],
+        "description": "Light, versatile synthetically insulated hoody works as a midlayer and standalone. Atom Series: Synthetic insulated midlayers. | LT: Lightweight.",
+        "mpn": "24108",
+        "sku": "435590",
+        "gtin12": "686487494084",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "",
+          "reviewCount": ""
+        },
+        "color": "Rhapsody",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "CAD",
+          "price": "320.00",
+          "itemCondition": "http://schema.org/NewCondition",
+          "availability": "",
+          "url": "http://arcteryx.com/ca/en/shop/mens/atom-lt-hoody"
+        }
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Product",
+        "name": "Atom LT Hoody Men's",
+        "image": [
+          "https://images-dynamic-arcteryx.imgix.net/F20/1350x1710/Atom-LT-Hoody-Elytron.jpg?auto=format&amp;w=1350"
+        ],
+        "description": "Light, versatile synthetically insulated hoody works as a midlayer and standalone. Atom Series: Synthetic insulated midlayers. | LT: Lightweight.",
+        "mpn": "24108",
+        "sku": "435591",
+        "gtin12": "686487493469",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "",
+          "reviewCount": ""
+        },
+        "color": "24K Black",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "CAD",
+          "price": "320.00",
+          "itemCondition": "http://schema.org/NewCondition",
+          "availability": "",
+          "url": "http://arcteryx.com/ca/en/shop/mens/atom-lt-hoody"
+        }
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Product",
+        "name": "Atom LT Hoody Men's",
+        "image": [
+          "https://images-dynamic-arcteryx.imgix.net/F20/1350x1710/Atom-LT-Hoody-Elytron.jpg?auto=format&amp;w=1350"
+        ],
+        "description": "Light, versatile synthetically insulated hoody works as a midlayer and standalone. Atom Series: Synthetic insulated midlayers. | LT: Lightweight.",
+        "mpn": "24108",
+        "sku": "435592",
+        "gtin12": "686487493476",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "",
+          "reviewCount": ""
+        },
+        "color": "24K Black",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "CAD",
+          "price": "320.00",
+          "itemCondition": "http://schema.org/NewCondition",
+          "availability": "",
+          "url": "http://arcteryx.com/ca/en/shop/mens/atom-lt-hoody"
+        }
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Product",
+        "name": "Atom LT Hoody Men's",
+        "image": [
+          "https://images-dynamic-arcteryx.imgix.net/F20/1350x1710/Atom-LT-Hoody-Elytron.jpg?auto=format&amp;w=1350"
+        ],
+        "description": "Light, versatile synthetically insulated hoody works as a midlayer and standalone. Atom Series: Synthetic insulated midlayers. | LT: Lightweight.",
+        "mpn": "24108",
+        "sku": "435593",
+        "gtin12": "686487493483",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "",
+          "reviewCount": ""
+        },
+        "color": "24K Black",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "CAD",
+          "price": "320.00",
+          "itemCondition": "http://schema.org/NewCondition",
+          "availability": "",
+          "url": "http://arcteryx.com/ca/en/shop/mens/atom-lt-hoody"
+        }
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Product",
+        "name": "Atom LT Hoody Men's",
+        "image": [
+          "https://images-dynamic-arcteryx.imgix.net/F20/1350x1710/Atom-LT-Hoody-Elytron.jpg?auto=format&amp;w=1350"
+        ],
+        "description": "Light, versatile synthetically insulated hoody works as a midlayer and standalone. Atom Series: Synthetic insulated midlayers. | LT: Lightweight.",
+        "mpn": "24108",
+        "sku": "435594",
+        "gtin12": "686487493490",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "",
+          "reviewCount": ""
+        },
+        "color": "24K Black",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "CAD",
+          "price": "320.00",
+          "itemCondition": "http://schema.org/NewCondition",
+          "availability": "",
+          "url": "http://arcteryx.com/ca/en/shop/mens/atom-lt-hoody"
+        }
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Product",
+        "name": "Atom LT Hoody Men's",
+        "image": [
+          "https://images-dynamic-arcteryx.imgix.net/F20/1350x1710/Atom-LT-Hoody-Elytron.jpg?auto=format&amp;w=1350"
+        ],
+        "description": "Light, versatile synthetically insulated hoody works as a midlayer and standalone. Atom Series: Synthetic insulated midlayers. | LT: Lightweight.",
+        "mpn": "24108",
+        "sku": "435595",
+        "gtin12": "686487493506",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "",
+          "reviewCount": ""
+        },
+        "color": "24K Black",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "CAD",
+          "price": "320.00",
+          "itemCondition": "http://schema.org/NewCondition",
+          "availability": "",
+          "url": "http://arcteryx.com/ca/en/shop/mens/atom-lt-hoody"
+        }
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Product",
+        "name": "Atom LT Hoody Men's",
+        "image": [
+          "https://images-dynamic-arcteryx.imgix.net/F20/1350x1710/Atom-LT-Hoody-Elytron.jpg?auto=format&amp;w=1350"
+        ],
+        "description": "Light, versatile synthetically insulated hoody works as a midlayer and standalone. Atom Series: Synthetic insulated midlayers. | LT: Lightweight.",
+        "mpn": "24108",
+        "sku": "435596",
+        "gtin12": "686487493513",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "",
+          "reviewCount": ""
+        },
+        "color": "24K Black",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "CAD",
+          "price": "320.00",
+          "itemCondition": "http://schema.org/NewCondition",
+          "availability": "",
+          "url": "http://arcteryx.com/ca/en/shop/mens/atom-lt-hoody"
+        }
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Product",
+        "name": "Atom LT Hoody Men's",
+        "image": [
+          "https://images-dynamic-arcteryx.imgix.net/F20/1350x1710/Atom-LT-Hoody-Elytron.jpg?auto=format&amp;w=1350"
+        ],
+        "description": "Light, versatile synthetically insulated hoody works as a midlayer and standalone. Atom Series: Synthetic insulated midlayers. | LT: Lightweight.",
+        "mpn": "24108",
+        "sku": "435598",
+        "gtin12": "686487493520",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "",
+          "reviewCount": ""
+        },
+        "color": "24K Black",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "CAD",
+          "price": "320.00",
+          "itemCondition": "http://schema.org/NewCondition",
+          "availability": "",
+          "url": "http://arcteryx.com/ca/en/shop/mens/atom-lt-hoody"
+        }
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Product",
+        "name": "Atom LT Hoody Men's",
+        "image": [
+          "https://images-dynamic-arcteryx.imgix.net/F20/1350x1710/Atom-LT-Hoody-Elytron.jpg?auto=format&amp;w=1350"
+        ],
+        "description": "Light, versatile synthetically insulated hoody works as a midlayer and standalone. Atom Series: Synthetic insulated midlayers. | LT: Lightweight.",
+        "mpn": "24108",
+        "sku": "435599",
+        "gtin12": "686487493674",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "",
+          "reviewCount": ""
+        },
+        "color": "Dynasty",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "CAD",
+          "price": "320.00",
+          "itemCondition": "http://schema.org/NewCondition",
+          "availability": "",
+          "url": "http://arcteryx.com/ca/en/shop/mens/atom-lt-hoody"
+        }
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Product",
+        "name": "Atom LT Hoody Men's",
+        "image": [
+          "https://images-dynamic-arcteryx.imgix.net/F20/1350x1710/Atom-LT-Hoody-Elytron.jpg?auto=format&amp;w=1350"
+        ],
+        "description": "Light, versatile synthetically insulated hoody works as a midlayer and standalone. Atom Series: Synthetic insulated midlayers. | LT: Lightweight.",
+        "mpn": "24108",
+        "sku": "435600",
+        "gtin12": "686487493681",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "",
+          "reviewCount": ""
+        },
+        "color": "Dynasty",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "CAD",
+          "price": "320.00",
+          "itemCondition": "http://schema.org/NewCondition",
+          "availability": "",
+          "url": "http://arcteryx.com/ca/en/shop/mens/atom-lt-hoody"
+        }
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Product",
+        "name": "Atom LT Hoody Men's",
+        "image": [
+          "https://images-dynamic-arcteryx.imgix.net/F20/1350x1710/Atom-LT-Hoody-Elytron.jpg?auto=format&amp;w=1350"
+        ],
+        "description": "Light, versatile synthetically insulated hoody works as a midlayer and standalone. Atom Series: Synthetic insulated midlayers. | LT: Lightweight.",
+        "mpn": "24108",
+        "sku": "435601",
+        "gtin12": "686487493698",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "",
+          "reviewCount": ""
+        },
+        "color": "Dynasty",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "CAD",
+          "price": "320.00",
+          "itemCondition": "http://schema.org/NewCondition",
+          "availability": "",
+          "url": "http://arcteryx.com/ca/en/shop/mens/atom-lt-hoody"
+        }
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Product",
+        "name": "Atom LT Hoody Men's",
+        "image": [
+          "https://images-dynamic-arcteryx.imgix.net/F20/1350x1710/Atom-LT-Hoody-Elytron.jpg?auto=format&amp;w=1350"
+        ],
+        "description": "Light, versatile synthetically insulated hoody works as a midlayer and standalone. Atom Series: Synthetic insulated midlayers. | LT: Lightweight.",
+        "mpn": "24108",
+        "sku": "435602",
+        "gtin12": "686487493704",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "",
+          "reviewCount": ""
+        },
+        "color": "Dynasty",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "CAD",
+          "price": "320.00",
+          "itemCondition": "http://schema.org/NewCondition",
+          "availability": "",
+          "url": "http://arcteryx.com/ca/en/shop/mens/atom-lt-hoody"
+        }
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Product",
+        "name": "Atom LT Hoody Men's",
+        "image": [
+          "https://images-dynamic-arcteryx.imgix.net/F20/1350x1710/Atom-LT-Hoody-Elytron.jpg?auto=format&amp;w=1350"
+        ],
+        "description": "Light, versatile synthetically insulated hoody works as a midlayer and standalone. Atom Series: Synthetic insulated midlayers. | LT: Lightweight.",
+        "mpn": "24108",
+        "sku": "435603",
+        "gtin12": "686487493711",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "",
+          "reviewCount": ""
+        },
+        "color": "Dynasty",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "CAD",
+          "price": "320.00",
+          "itemCondition": "http://schema.org/NewCondition",
+          "availability": "",
+          "url": "http://arcteryx.com/ca/en/shop/mens/atom-lt-hoody"
+        }
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Product",
+        "name": "Atom LT Hoody Men's",
+        "image": [
+          "https://images-dynamic-arcteryx.imgix.net/F20/1350x1710/Atom-LT-Hoody-Elytron.jpg?auto=format&amp;w=1350"
+        ],
+        "description": "Light, versatile synthetically insulated hoody works as a midlayer and standalone. Atom Series: Synthetic insulated midlayers. | LT: Lightweight.",
+        "mpn": "24108",
+        "sku": "435604",
+        "gtin12": "686487493728",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "",
+          "reviewCount": ""
+        },
+        "color": "Dynasty",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "CAD",
+          "price": "320.00",
+          "itemCondition": "http://schema.org/NewCondition",
+          "availability": "",
+          "url": "http://arcteryx.com/ca/en/shop/mens/atom-lt-hoody"
+        }
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Product",
+        "name": "Atom LT Hoody Men's",
+        "image": [
+          "https://images-dynamic-arcteryx.imgix.net/F20/1350x1710/Atom-LT-Hoody-Elytron.jpg?auto=format&amp;w=1350"
+        ],
+        "description": "Light, versatile synthetically insulated hoody works as a midlayer and standalone. Atom Series: Synthetic insulated midlayers. | LT: Lightweight.",
+        "mpn": "24108",
+        "sku": "435606",
+        "gtin12": "686487493735",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "",
+          "reviewCount": ""
+        },
+        "color": "Dynasty",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "CAD",
+          "price": "320.00",
+          "itemCondition": "http://schema.org/NewCondition",
+          "availability": "",
+          "url": "http://arcteryx.com/ca/en/shop/mens/atom-lt-hoody"
+        }
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Product",
+        "name": "Atom LT Hoody Men's",
+        "image": [
+          "https://images-dynamic-arcteryx.imgix.net/F20/1350x1710/Atom-LT-Hoody-Elytron.jpg?auto=format&amp;w=1350"
+        ],
+        "description": "Light, versatile synthetically insulated hoody works as a midlayer and standalone. Atom Series: Synthetic insulated midlayers. | LT: Lightweight.",
+        "mpn": "24108",
+        "sku": "435615",
+        "gtin12": "686487493742",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "",
+          "reviewCount": ""
+        },
+        "color": "Elytron",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "CAD",
+          "price": "320.00",
+          "itemCondition": "http://schema.org/NewCondition",
+          "availability": "",
+          "url": "http://arcteryx.com/ca/en/shop/mens/atom-lt-hoody"
+        }
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Product",
+        "name": "Atom LT Hoody Men's",
+        "image": [
+          "https://images-dynamic-arcteryx.imgix.net/F20/1350x1710/Atom-LT-Hoody-Elytron.jpg?auto=format&amp;w=1350"
+        ],
+        "description": "Light, versatile synthetically insulated hoody works as a midlayer and standalone. Atom Series: Synthetic insulated midlayers. | LT: Lightweight.",
+        "mpn": "24108",
+        "sku": "435616",
+        "gtin12": "686487493759",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "",
+          "reviewCount": ""
+        },
+        "color": "Elytron",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "CAD",
+          "price": "320.00",
+          "itemCondition": "http://schema.org/NewCondition",
+          "availability": "",
+          "url": "http://arcteryx.com/ca/en/shop/mens/atom-lt-hoody"
+        }
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Product",
+        "name": "Atom LT Hoody Men's",
+        "image": [
+          "https://images-dynamic-arcteryx.imgix.net/F20/1350x1710/Atom-LT-Hoody-Elytron.jpg?auto=format&amp;w=1350"
+        ],
+        "description": "Light, versatile synthetically insulated hoody works as a midlayer and standalone. Atom Series: Synthetic insulated midlayers. | LT: Lightweight.",
+        "mpn": "24108",
+        "sku": "435617",
+        "gtin12": "686487493766",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "",
+          "reviewCount": ""
+        },
+        "color": "Elytron",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "CAD",
+          "price": "320.00",
+          "itemCondition": "http://schema.org/NewCondition",
+          "availability": "",
+          "url": "http://arcteryx.com/ca/en/shop/mens/atom-lt-hoody"
+        }
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Product",
+        "name": "Atom LT Hoody Men's",
+        "image": [
+          "https://images-dynamic-arcteryx.imgix.net/F20/1350x1710/Atom-LT-Hoody-Elytron.jpg?auto=format&amp;w=1350"
+        ],
+        "description": "Light, versatile synthetically insulated hoody works as a midlayer and standalone. Atom Series: Synthetic insulated midlayers. | LT: Lightweight.",
+        "mpn": "24108",
+        "sku": "435618",
+        "gtin12": "686487493773",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "",
+          "reviewCount": ""
+        },
+        "color": "Elytron",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "CAD",
+          "price": "320.00",
+          "itemCondition": "http://schema.org/NewCondition",
+          "availability": "",
+          "url": "http://arcteryx.com/ca/en/shop/mens/atom-lt-hoody"
+        }
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Product",
+        "name": "Atom LT Hoody Men's",
+        "image": [
+          "https://images-dynamic-arcteryx.imgix.net/F20/1350x1710/Atom-LT-Hoody-Elytron.jpg?auto=format&amp;w=1350"
+        ],
+        "description": "Light, versatile synthetically insulated hoody works as a midlayer and standalone. Atom Series: Synthetic insulated midlayers. | LT: Lightweight.",
+        "mpn": "24108",
+        "sku": "435619",
+        "gtin12": "686487493780",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "",
+          "reviewCount": ""
+        },
+        "color": "Elytron",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "CAD",
+          "price": "320.00",
+          "itemCondition": "http://schema.org/NewCondition",
+          "availability": "",
+          "url": "http://arcteryx.com/ca/en/shop/mens/atom-lt-hoody"
+        }
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Product",
+        "name": "Atom LT Hoody Men's",
+        "image": [
+          "https://images-dynamic-arcteryx.imgix.net/F20/1350x1710/Atom-LT-Hoody-Elytron.jpg?auto=format&amp;w=1350"
+        ],
+        "description": "Light, versatile synthetically insulated hoody works as a midlayer and standalone. Atom Series: Synthetic insulated midlayers. | LT: Lightweight.",
+        "mpn": "24108",
+        "sku": "435620",
+        "gtin12": "686487493797",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "",
+          "reviewCount": ""
+        },
+        "color": "Elytron",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "CAD",
+          "price": "320.00",
+          "itemCondition": "http://schema.org/NewCondition",
+          "availability": "",
+          "url": "http://arcteryx.com/ca/en/shop/mens/atom-lt-hoody"
+        }
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Product",
+        "name": "Atom LT Hoody Men's",
+        "image": [
+          "https://images-dynamic-arcteryx.imgix.net/F20/1350x1710/Atom-LT-Hoody-Elytron.jpg?auto=format&amp;w=1350"
+        ],
+        "description": "Light, versatile synthetically insulated hoody works as a midlayer and standalone. Atom Series: Synthetic insulated midlayers. | LT: Lightweight.",
+        "mpn": "24108",
+        "sku": "435622",
+        "gtin12": "686487493803",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "",
+          "reviewCount": ""
+        },
+        "color": "Elytron",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "CAD",
+          "price": "320.00",
+          "itemCondition": "http://schema.org/NewCondition",
+          "availability": "",
+          "url": "http://arcteryx.com/ca/en/shop/mens/atom-lt-hoody"
+        }
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Product",
+        "name": "Atom LT Hoody Men's",
+        "image": [
+          "https://images-dynamic-arcteryx.imgix.net/F20/1350x1710/Atom-LT-Hoody-Elytron.jpg?auto=format&amp;w=1350"
+        ],
+        "description": "Light, versatile synthetically insulated hoody works as a midlayer and standalone. Atom Series: Synthetic insulated midlayers. | LT: Lightweight.",
+        "mpn": "24108",
+        "sku": "435623",
+        "gtin12": "686487493957",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "",
+          "reviewCount": ""
+        },
+        "color": "Paradox",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "CAD",
+          "price": "320.00",
+          "itemCondition": "http://schema.org/NewCondition",
+          "availability": "",
+          "url": "http://arcteryx.com/ca/en/shop/mens/atom-lt-hoody"
+        }
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Product",
+        "name": "Atom LT Hoody Men's",
+        "image": [
+          "https://images-dynamic-arcteryx.imgix.net/F20/1350x1710/Atom-LT-Hoody-Elytron.jpg?auto=format&amp;w=1350"
+        ],
+        "description": "Light, versatile synthetically insulated hoody works as a midlayer and standalone. Atom Series: Synthetic insulated midlayers. | LT: Lightweight.",
+        "mpn": "24108",
+        "sku": "435624",
+        "gtin12": "686487493964",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "",
+          "reviewCount": ""
+        },
+        "color": "Paradox",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "CAD",
+          "price": "320.00",
+          "itemCondition": "http://schema.org/NewCondition",
+          "availability": "",
+          "url": "http://arcteryx.com/ca/en/shop/mens/atom-lt-hoody"
+        }
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Product",
+        "name": "Atom LT Hoody Men's",
+        "image": [
+          "https://images-dynamic-arcteryx.imgix.net/F20/1350x1710/Atom-LT-Hoody-Elytron.jpg?auto=format&amp;w=1350"
+        ],
+        "description": "Light, versatile synthetically insulated hoody works as a midlayer and standalone. Atom Series: Synthetic insulated midlayers. | LT: Lightweight.",
+        "mpn": "24108",
+        "sku": "435625",
+        "gtin12": "686487493971",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "",
+          "reviewCount": ""
+        },
+        "color": "Paradox",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "CAD",
+          "price": "320.00",
+          "itemCondition": "http://schema.org/NewCondition",
+          "availability": "",
+          "url": "http://arcteryx.com/ca/en/shop/mens/atom-lt-hoody"
+        }
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Product",
+        "name": "Atom LT Hoody Men's",
+        "image": [
+          "https://images-dynamic-arcteryx.imgix.net/F20/1350x1710/Atom-LT-Hoody-Elytron.jpg?auto=format&amp;w=1350"
+        ],
+        "description": "Light, versatile synthetically insulated hoody works as a midlayer and standalone. Atom Series: Synthetic insulated midlayers. | LT: Lightweight.",
+        "mpn": "24108",
+        "sku": "435626",
+        "gtin12": "686487493988",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "",
+          "reviewCount": ""
+        },
+        "color": "Paradox",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "CAD",
+          "price": "320.00",
+          "itemCondition": "http://schema.org/NewCondition",
+          "availability": "",
+          "url": "http://arcteryx.com/ca/en/shop/mens/atom-lt-hoody"
+        }
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Product",
+        "name": "Atom LT Hoody Men's",
+        "image": [
+          "https://images-dynamic-arcteryx.imgix.net/F20/1350x1710/Atom-LT-Hoody-Elytron.jpg?auto=format&amp;w=1350"
+        ],
+        "description": "Light, versatile synthetically insulated hoody works as a midlayer and standalone. Atom Series: Synthetic insulated midlayers. | LT: Lightweight.",
+        "mpn": "24108",
+        "sku": "435627",
+        "gtin12": "686487493995",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "",
+          "reviewCount": ""
+        },
+        "color": "Paradox",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "CAD",
+          "price": "320.00",
+          "itemCondition": "http://schema.org/NewCondition",
+          "availability": "",
+          "url": "http://arcteryx.com/ca/en/shop/mens/atom-lt-hoody"
+        }
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Product",
+        "name": "Atom LT Hoody Men's",
+        "image": [
+          "https://images-dynamic-arcteryx.imgix.net/F20/1350x1710/Atom-LT-Hoody-Elytron.jpg?auto=format&amp;w=1350"
+        ],
+        "description": "Light, versatile synthetically insulated hoody works as a midlayer and standalone. Atom Series: Synthetic insulated midlayers. | LT: Lightweight.",
+        "mpn": "24108",
+        "sku": "435628",
+        "gtin12": "686487494008",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "",
+          "reviewCount": ""
+        },
+        "color": "Paradox",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "CAD",
+          "price": "320.00",
+          "itemCondition": "http://schema.org/NewCondition",
+          "availability": "",
+          "url": "http://arcteryx.com/ca/en/shop/mens/atom-lt-hoody"
+        }
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Product",
+        "name": "Atom LT Hoody Men's",
+        "image": [
+          "https://images-dynamic-arcteryx.imgix.net/F20/1350x1710/Atom-LT-Hoody-Elytron.jpg?auto=format&amp;w=1350"
+        ],
+        "description": "Light, versatile synthetically insulated hoody works as a midlayer and standalone. Atom Series: Synthetic insulated midlayers. | LT: Lightweight.",
+        "mpn": "24108",
+        "sku": "435630",
+        "gtin12": "686487494015",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "",
+          "reviewCount": ""
+        },
+        "color": "Paradox",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "CAD",
+          "price": "320.00",
+          "itemCondition": "http://schema.org/NewCondition",
+          "availability": "",
+          "url": "http://arcteryx.com/ca/en/shop/mens/atom-lt-hoody"
+        }
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Product",
+        "name": "Atom LT Hoody Men's",
+        "image": [
+          "https://images-dynamic-arcteryx.imgix.net/F20/1350x1710/Atom-LT-Hoody-Elytron.jpg?auto=format&amp;w=1350"
+        ],
+        "description": "Light, versatile synthetically insulated hoody works as a midlayer and standalone. Atom Series: Synthetic insulated midlayers. | LT: Lightweight.",
+        "mpn": "24108",
+        "sku": "435631",
+        "gtin12": "686487493537",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "",
+          "reviewCount": ""
+        },
+        "color": "Black",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "CAD",
+          "price": "320.00",
+          "itemCondition": "http://schema.org/NewCondition",
+          "availability": "",
+          "url": "http://arcteryx.com/ca/en/shop/mens/atom-lt-hoody"
+        }
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Product",
+        "name": "Atom LT Hoody Men's",
+        "image": [
+          "https://images-dynamic-arcteryx.imgix.net/F20/1350x1710/Atom-LT-Hoody-Elytron.jpg?auto=format&amp;w=1350"
+        ],
+        "description": "Light, versatile synthetically insulated hoody works as a midlayer and standalone. Atom Series: Synthetic insulated midlayers. | LT: Lightweight.",
+        "mpn": "24108",
+        "sku": "435632",
+        "gtin12": "686487493544",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "",
+          "reviewCount": ""
+        },
+        "color": "Black",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "CAD",
+          "price": "320.00",
+          "itemCondition": "http://schema.org/NewCondition",
+          "availability": "",
+          "url": "http://arcteryx.com/ca/en/shop/mens/atom-lt-hoody"
+        }
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Product",
+        "name": "Atom LT Hoody Men's",
+        "image": [
+          "https://images-dynamic-arcteryx.imgix.net/F20/1350x1710/Atom-LT-Hoody-Elytron.jpg?auto=format&amp;w=1350"
+        ],
+        "description": "Light, versatile synthetically insulated hoody works as a midlayer and standalone. Atom Series: Synthetic insulated midlayers. | LT: Lightweight.",
+        "mpn": "24108",
+        "sku": "435633",
+        "gtin12": "686487493551",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "",
+          "reviewCount": ""
+        },
+        "color": "Black",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "CAD",
+          "price": "320.00",
+          "itemCondition": "http://schema.org/NewCondition",
+          "availability": "",
+          "url": "http://arcteryx.com/ca/en/shop/mens/atom-lt-hoody"
+        }
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Product",
+        "name": "Atom LT Hoody Men's",
+        "image": [
+          "https://images-dynamic-arcteryx.imgix.net/F20/1350x1710/Atom-LT-Hoody-Elytron.jpg?auto=format&amp;w=1350"
+        ],
+        "description": "Light, versatile synthetically insulated hoody works as a midlayer and standalone. Atom Series: Synthetic insulated midlayers. | LT: Lightweight.",
+        "mpn": "24108",
+        "sku": "435634",
+        "gtin12": "686487493568",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "",
+          "reviewCount": ""
+        },
+        "color": "Black",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "CAD",
+          "price": "320.00",
+          "itemCondition": "http://schema.org/NewCondition",
+          "availability": "",
+          "url": "http://arcteryx.com/ca/en/shop/mens/atom-lt-hoody"
+        }
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Product",
+        "name": "Atom LT Hoody Men's",
+        "image": [
+          "https://images-dynamic-arcteryx.imgix.net/F20/1350x1710/Atom-LT-Hoody-Elytron.jpg?auto=format&amp;w=1350"
+        ],
+        "description": "Light, versatile synthetically insulated hoody works as a midlayer and standalone. Atom Series: Synthetic insulated midlayers. | LT: Lightweight.",
+        "mpn": "24108",
+        "sku": "435635",
+        "gtin12": "686487493575",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "",
+          "reviewCount": ""
+        },
+        "color": "Black",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "CAD",
+          "price": "320.00",
+          "itemCondition": "http://schema.org/NewCondition",
+          "availability": "",
+          "url": "http://arcteryx.com/ca/en/shop/mens/atom-lt-hoody"
+        }
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Product",
+        "name": "Atom LT Hoody Men's",
+        "image": [
+          "https://images-dynamic-arcteryx.imgix.net/F20/1350x1710/Atom-LT-Hoody-Elytron.jpg?auto=format&amp;w=1350"
+        ],
+        "description": "Light, versatile synthetically insulated hoody works as a midlayer and standalone. Atom Series: Synthetic insulated midlayers. | LT: Lightweight.",
+        "mpn": "24108",
+        "sku": "435636",
+        "gtin12": "686487493582",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "",
+          "reviewCount": ""
+        },
+        "color": "Black",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "CAD",
+          "price": "320.00",
+          "itemCondition": "http://schema.org/NewCondition",
+          "availability": "",
+          "url": "http://arcteryx.com/ca/en/shop/mens/atom-lt-hoody"
+        }
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Product",
+        "name": "Atom LT Hoody Men's",
+        "image": [
+          "https://images-dynamic-arcteryx.imgix.net/F20/1350x1710/Atom-LT-Hoody-Elytron.jpg?auto=format&amp;w=1350"
+        ],
+        "description": "Light, versatile synthetically insulated hoody works as a midlayer and standalone. Atom Series: Synthetic insulated midlayers. | LT: Lightweight.",
+        "mpn": "24108",
+        "sku": "435638",
+        "gtin12": "686487493599",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "",
+          "reviewCount": ""
+        },
+        "color": "Black",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "CAD",
+          "price": "320.00",
+          "itemCondition": "http://schema.org/NewCondition",
+          "availability": "",
+          "url": "http://arcteryx.com/ca/en/shop/mens/atom-lt-hoody"
+        }
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Product",
+        "name": "Atom LT Hoody Men's",
+        "image": [
+          "https://images-dynamic-arcteryx.imgix.net/F20/1350x1710/Atom-LT-Hoody-Elytron.jpg?auto=format&amp;w=1350"
+        ],
+        "description": "Light, versatile synthetically insulated hoody works as a midlayer and standalone. Atom Series: Synthetic insulated midlayers. | LT: Lightweight.",
+        "mpn": "24108",
+        "sku": "437525",
+        "gtin12": "686487494091",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "",
+          "reviewCount": ""
+        },
+        "color": "Squid Ink",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "CAD",
+          "price": "320.00",
+          "itemCondition": "http://schema.org/NewCondition",
+          "availability": "",
+          "url": "http://arcteryx.com/ca/en/shop/mens/atom-lt-hoody"
+        }
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Product",
+        "name": "Atom LT Hoody Men's",
+        "image": [
+          "https://images-dynamic-arcteryx.imgix.net/F20/1350x1710/Atom-LT-Hoody-Elytron.jpg?auto=format&amp;w=1350"
+        ],
+        "description": "Light, versatile synthetically insulated hoody works as a midlayer and standalone. Atom Series: Synthetic insulated midlayers. | LT: Lightweight.",
+        "mpn": "24108",
+        "sku": "437526",
+        "gtin12": "686487494107",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "",
+          "reviewCount": ""
+        },
+        "color": "Squid Ink",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "CAD",
+          "price": "320.00",
+          "itemCondition": "http://schema.org/NewCondition",
+          "availability": "",
+          "url": "http://arcteryx.com/ca/en/shop/mens/atom-lt-hoody"
+        }
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Product",
+        "name": "Atom LT Hoody Men's",
+        "image": [
+          "https://images-dynamic-arcteryx.imgix.net/F20/1350x1710/Atom-LT-Hoody-Elytron.jpg?auto=format&amp;w=1350"
+        ],
+        "description": "Light, versatile synthetically insulated hoody works as a midlayer and standalone. Atom Series: Synthetic insulated midlayers. | LT: Lightweight.",
+        "mpn": "24108",
+        "sku": "437527",
+        "gtin12": "686487494114",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "",
+          "reviewCount": ""
+        },
+        "color": "Squid Ink",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "CAD",
+          "price": "320.00",
+          "itemCondition": "http://schema.org/NewCondition",
+          "availability": "",
+          "url": "http://arcteryx.com/ca/en/shop/mens/atom-lt-hoody"
+        }
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Product",
+        "name": "Atom LT Hoody Men's",
+        "image": [
+          "https://images-dynamic-arcteryx.imgix.net/F20/1350x1710/Atom-LT-Hoody-Elytron.jpg?auto=format&amp;w=1350"
+        ],
+        "description": "Light, versatile synthetically insulated hoody works as a midlayer and standalone. Atom Series: Synthetic insulated midlayers. | LT: Lightweight.",
+        "mpn": "24108",
+        "sku": "437528",
+        "gtin12": "686487494121",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "",
+          "reviewCount": ""
+        },
+        "color": "Squid Ink",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "CAD",
+          "price": "320.00",
+          "itemCondition": "http://schema.org/NewCondition",
+          "availability": "",
+          "url": "http://arcteryx.com/ca/en/shop/mens/atom-lt-hoody"
+        }
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Product",
+        "name": "Atom LT Hoody Men's",
+        "image": [
+          "https://images-dynamic-arcteryx.imgix.net/F20/1350x1710/Atom-LT-Hoody-Elytron.jpg?auto=format&amp;w=1350"
+        ],
+        "description": "Light, versatile synthetically insulated hoody works as a midlayer and standalone. Atom Series: Synthetic insulated midlayers. | LT: Lightweight.",
+        "mpn": "24108",
+        "sku": "437529",
+        "gtin12": "686487494138",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "",
+          "reviewCount": ""
+        },
+        "color": "Squid Ink",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "CAD",
+          "price": "320.00",
+          "itemCondition": "http://schema.org/NewCondition",
+          "availability": "",
+          "url": "http://arcteryx.com/ca/en/shop/mens/atom-lt-hoody"
+        }
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Product",
+        "name": "Atom LT Hoody Men's",
+        "image": [
+          "https://images-dynamic-arcteryx.imgix.net/F20/1350x1710/Atom-LT-Hoody-Elytron.jpg?auto=format&amp;w=1350"
+        ],
+        "description": "Light, versatile synthetically insulated hoody works as a midlayer and standalone. Atom Series: Synthetic insulated midlayers. | LT: Lightweight.",
+        "mpn": "24108",
+        "sku": "437530",
+        "gtin12": "686487494145",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "",
+          "reviewCount": ""
+        },
+        "color": "Squid Ink",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "CAD",
+          "price": "320.00",
+          "itemCondition": "http://schema.org/NewCondition",
+          "availability": "",
+          "url": "http://arcteryx.com/ca/en/shop/mens/atom-lt-hoody"
+        }
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Product",
+        "name": "Atom LT Hoody Men's",
+        "image": [
+          "https://images-dynamic-arcteryx.imgix.net/F20/1350x1710/Atom-LT-Hoody-Elytron.jpg?auto=format&amp;w=1350"
+        ],
+        "description": "Light, versatile synthetically insulated hoody works as a midlayer and standalone. Atom Series: Synthetic insulated midlayers. | LT: Lightweight.",
+        "mpn": "24108",
+        "sku": "437532",
+        "gtin12": "686487494152",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "",
+          "reviewCount": ""
+        },
+        "color": "Squid Ink",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "CAD",
+          "price": "320.00",
+          "itemCondition": "http://schema.org/NewCondition",
+          "availability": "",
+          "url": "http://arcteryx.com/ca/en/shop/mens/atom-lt-hoody"
+        }
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Product",
+        "name": "Atom LT Hoody Men's",
+        "image": [
+          "https://images-dynamic-arcteryx.imgix.net/F20/1350x1710/Atom-LT-Hoody-Elytron.jpg?auto=format&amp;w=1350"
+        ],
+        "description": "Light, versatile synthetically insulated hoody works as a midlayer and standalone. Atom Series: Synthetic insulated midlayers. | LT: Lightweight.",
+        "mpn": "24108",
+        "sku": "450600",
+        "gtin12": "686487580893",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "",
+          "reviewCount": ""
+        },
+        "color": "Nocturne",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "CAD",
+          "price": "320.00",
+          "itemCondition": "http://schema.org/NewCondition",
+          "availability": "",
+          "url": "http://arcteryx.com/ca/en/shop/mens/atom-lt-hoody"
+        }
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Product",
+        "name": "Atom LT Hoody Men's",
+        "image": [
+          "https://images-dynamic-arcteryx.imgix.net/F20/1350x1710/Atom-LT-Hoody-Elytron.jpg?auto=format&amp;w=1350"
+        ],
+        "description": "Light, versatile synthetically insulated hoody works as a midlayer and standalone. Atom Series: Synthetic insulated midlayers. | LT: Lightweight.",
+        "mpn": "24108",
+        "sku": "450601",
+        "gtin12": "686487580909",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "",
+          "reviewCount": ""
+        },
+        "color": "Nocturne",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "CAD",
+          "price": "320.00",
+          "itemCondition": "http://schema.org/NewCondition",
+          "availability": "",
+          "url": "http://arcteryx.com/ca/en/shop/mens/atom-lt-hoody"
+        }
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Product",
+        "name": "Atom LT Hoody Men's",
+        "image": [
+          "https://images-dynamic-arcteryx.imgix.net/F20/1350x1710/Atom-LT-Hoody-Elytron.jpg?auto=format&amp;w=1350"
+        ],
+        "description": "Light, versatile synthetically insulated hoody works as a midlayer and standalone. Atom Series: Synthetic insulated midlayers. | LT: Lightweight.",
+        "mpn": "24108",
+        "sku": "450602",
+        "gtin12": "686487580916",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "",
+          "reviewCount": ""
+        },
+        "color": "Nocturne",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "CAD",
+          "price": "320.00",
+          "itemCondition": "http://schema.org/NewCondition",
+          "availability": "",
+          "url": "http://arcteryx.com/ca/en/shop/mens/atom-lt-hoody"
+        }
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Product",
+        "name": "Atom LT Hoody Men's",
+        "image": [
+          "https://images-dynamic-arcteryx.imgix.net/F20/1350x1710/Atom-LT-Hoody-Elytron.jpg?auto=format&amp;w=1350"
+        ],
+        "description": "Light, versatile synthetically insulated hoody works as a midlayer and standalone. Atom Series: Synthetic insulated midlayers. | LT: Lightweight.",
+        "mpn": "24108",
+        "sku": "450603",
+        "gtin12": "686487580923",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "",
+          "reviewCount": ""
+        },
+        "color": "Nocturne",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "CAD",
+          "price": "320.00",
+          "itemCondition": "http://schema.org/NewCondition",
+          "availability": "",
+          "url": "http://arcteryx.com/ca/en/shop/mens/atom-lt-hoody"
+        }
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Product",
+        "name": "Atom LT Hoody Men's",
+        "image": [
+          "https://images-dynamic-arcteryx.imgix.net/F20/1350x1710/Atom-LT-Hoody-Elytron.jpg?auto=format&amp;w=1350"
+        ],
+        "description": "Light, versatile synthetically insulated hoody works as a midlayer and standalone. Atom Series: Synthetic insulated midlayers. | LT: Lightweight.",
+        "mpn": "24108",
+        "sku": "450604",
+        "gtin12": "686487580930",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "",
+          "reviewCount": ""
+        },
+        "color": "Nocturne",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "CAD",
+          "price": "320.00",
+          "itemCondition": "http://schema.org/NewCondition",
+          "availability": "",
+          "url": "http://arcteryx.com/ca/en/shop/mens/atom-lt-hoody"
+        }
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Product",
+        "name": "Atom LT Hoody Men's",
+        "image": [
+          "https://images-dynamic-arcteryx.imgix.net/F20/1350x1710/Atom-LT-Hoody-Elytron.jpg?auto=format&amp;w=1350"
+        ],
+        "description": "Light, versatile synthetically insulated hoody works as a midlayer and standalone. Atom Series: Synthetic insulated midlayers. | LT: Lightweight.",
+        "mpn": "24108",
+        "sku": "450605",
+        "gtin12": "686487580947",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "",
+          "reviewCount": ""
+        },
+        "color": "Nocturne",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "CAD",
+          "price": "320.00",
+          "itemCondition": "http://schema.org/NewCondition",
+          "availability": "",
+          "url": "http://arcteryx.com/ca/en/shop/mens/atom-lt-hoody"
+        }
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Product",
+        "name": "Atom LT Hoody Men's",
+        "image": [
+          "https://images-dynamic-arcteryx.imgix.net/F20/1350x1710/Atom-LT-Hoody-Elytron.jpg?auto=format&amp;w=1350"
+        ],
+        "description": "Light, versatile synthetically insulated hoody works as a midlayer and standalone. Atom Series: Synthetic insulated midlayers. | LT: Lightweight.",
+        "mpn": "24108",
+        "sku": "450607",
+        "gtin12": "686487580954",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "",
+          "reviewCount": ""
+        },
+        "color": "Nocturne",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "CAD",
+          "price": "320.00",
+          "itemCondition": "http://schema.org/NewCondition",
+          "availability": "",
+          "url": "http://arcteryx.com/ca/en/shop/mens/atom-lt-hoody"
+        }
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Product",
+        "name": "Atom LT Hoody Men's",
+        "image": [
+          "https://images-dynamic-arcteryx.imgix.net/F20/1350x1710/Atom-LT-Hoody-Elytron.jpg?auto=format&amp;w=1350"
+        ],
+        "description": "Light, versatile synthetically insulated hoody works as a midlayer and standalone. Atom Series: Synthetic insulated midlayers. | LT: Lightweight.",
+        "mpn": "24108",
+        "sku": "464653",
+        "gtin12": "686487591707",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "",
+          "reviewCount": ""
+        },
+        "color": "SMU-Pegasus/Cobalt Sun",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "CAD",
+          "price": "320.00",
+          "itemCondition": "http://schema.org/NewCondition",
+          "availability": "",
+          "url": "http://arcteryx.com/ca/en/shop/mens/atom-lt-hoody"
+        }
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Product",
+        "name": "Atom LT Hoody Men's",
+        "image": [
+          "https://images-dynamic-arcteryx.imgix.net/F20/1350x1710/Atom-LT-Hoody-Elytron.jpg?auto=format&amp;w=1350"
+        ],
+        "description": "Light, versatile synthetically insulated hoody works as a midlayer and standalone. Atom Series: Synthetic insulated midlayers. | LT: Lightweight.",
+        "mpn": "24108",
+        "sku": "464654",
+        "gtin12": "686487591714",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "",
+          "reviewCount": ""
+        },
+        "color": "SMU-Pegasus/Cobalt Sun",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "CAD",
+          "price": "320.00",
+          "itemCondition": "http://schema.org/NewCondition",
+          "availability": "",
+          "url": "http://arcteryx.com/ca/en/shop/mens/atom-lt-hoody"
+        }
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Product",
+        "name": "Atom LT Hoody Men's",
+        "image": [
+          "https://images-dynamic-arcteryx.imgix.net/F20/1350x1710/Atom-LT-Hoody-Elytron.jpg?auto=format&amp;w=1350"
+        ],
+        "description": "Light, versatile synthetically insulated hoody works as a midlayer and standalone. Atom Series: Synthetic insulated midlayers. | LT: Lightweight.",
+        "mpn": "24108",
+        "sku": "464655",
+        "gtin12": "686487591721",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "",
+          "reviewCount": ""
+        },
+        "color": "SMU-Pegasus/Cobalt Sun",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "CAD",
+          "price": "320.00",
+          "itemCondition": "http://schema.org/NewCondition",
+          "availability": "",
+          "url": "http://arcteryx.com/ca/en/shop/mens/atom-lt-hoody"
+        }
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Product",
+        "name": "Atom LT Hoody Men's",
+        "image": [
+          "https://images-dynamic-arcteryx.imgix.net/F20/1350x1710/Atom-LT-Hoody-Elytron.jpg?auto=format&amp;w=1350"
+        ],
+        "description": "Light, versatile synthetically insulated hoody works as a midlayer and standalone. Atom Series: Synthetic insulated midlayers. | LT: Lightweight.",
+        "mpn": "24108",
+        "sku": "464656",
+        "gtin12": "686487591738",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "",
+          "reviewCount": ""
+        },
+        "color": "SMU-Pegasus/Cobalt Sun",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "CAD",
+          "price": "320.00",
+          "itemCondition": "http://schema.org/NewCondition",
+          "availability": "",
+          "url": "http://arcteryx.com/ca/en/shop/mens/atom-lt-hoody"
+        }
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Product",
+        "name": "Atom LT Hoody Men's",
+        "image": [
+          "https://images-dynamic-arcteryx.imgix.net/F20/1350x1710/Atom-LT-Hoody-Elytron.jpg?auto=format&amp;w=1350"
+        ],
+        "description": "Light, versatile synthetically insulated hoody works as a midlayer and standalone. Atom Series: Synthetic insulated midlayers. | LT: Lightweight.",
+        "mpn": "24108",
+        "sku": "464657",
+        "gtin12": "686487591745",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "",
+          "reviewCount": ""
+        },
+        "color": "SMU-Pegasus/Cobalt Sun",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "CAD",
+          "price": "320.00",
+          "itemCondition": "http://schema.org/NewCondition",
+          "availability": "",
+          "url": "http://arcteryx.com/ca/en/shop/mens/atom-lt-hoody"
+        }
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Product",
+        "name": "Atom LT Hoody Men's",
+        "image": [
+          "https://images-dynamic-arcteryx.imgix.net/F20/1350x1710/Atom-LT-Hoody-Elytron.jpg?auto=format&amp;w=1350"
+        ],
+        "description": "Light, versatile synthetically insulated hoody works as a midlayer and standalone. Atom Series: Synthetic insulated midlayers. | LT: Lightweight.",
+        "mpn": "24108",
+        "sku": "464658",
+        "gtin12": "686487591752",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "",
+          "reviewCount": ""
+        },
+        "color": "SMU-Pegasus/Cobalt Sun",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "CAD",
+          "price": "320.00",
+          "itemCondition": "http://schema.org/NewCondition",
+          "availability": "",
+          "url": "http://arcteryx.com/ca/en/shop/mens/atom-lt-hoody"
+        }
+      }
+    ];
+  </script>
+</body>
+
+</html>
