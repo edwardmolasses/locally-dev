@@ -1,5 +1,4 @@
 import { h, Component } from "preact";
-import "./style.scss";
 import Locally from "./Locally";
 
 export default class App extends Component {
@@ -15,7 +14,6 @@ export default class App extends Component {
 
   componentDidMount() {
     window.addEventListener('click', this.handleSizeClick);
-    console.log(` %c countryCode: ${this.state.countryCode}`, 'background: red; color: white');
   }
 
   componentWillUnmount() {
@@ -28,7 +26,6 @@ export default class App extends Component {
     const isSizeClicked = event.target.className.indexOf('product-size__thumbnail-container') === 0;
     const sizeNodeArr = Array.prototype.slice.call(document.getElementById('size-thumbnails').childNodes).map(el => el.className);
     const isSizeSelected = !!sizeNodeArr.filter(el => !!el).find(el => el.indexOf('selected') >= 0)
-
     
     if (isSizeSelected && (isColourClicked || isSizeClicked)) {
       const sku = !!document && document.querySelector("#size-thumbnails .selected") && document.querySelector("#size-thumbnails .selected").getAttribute("data-sku");
@@ -41,7 +38,7 @@ export default class App extends Component {
 
   render() {
     return this.state.upc && (
-      <Locally upc={this.state.upc} countryCode={this.state.country} />
+      <Locally upc={this.state.upc} countryCode={this.state.country} root={"locally-widget-root"} />
     )
   }
 }

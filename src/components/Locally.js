@@ -181,14 +181,14 @@ export class Locally extends Component {
   }
 
   componentDidMount() {
-    this.loadLocallyWidget(this.props.upc, this.props.countryCode);
+    this.loadLocallyWidget(this.props.upc, this.props.countryCode, this.props.root);
   }
 
   componentDidUpdate() {
-    this.loadLocallyWidget(this.props.upc, this.props.countryCode);
+    this.loadLocallyWidget(this.props.upc, this.props.countryCode, this.props.root);
   }
 
-  loadLocallyWidget(upc, countryCode) {
+  loadLocallyWidget(upc, countryCode, root) {
     const lcly_config_0 = {
       "company_name": "Arc'teryx",
       "button_id": "HTML",
@@ -214,7 +214,7 @@ export class Locally extends Component {
   
     script.src = 'https://Arcteryx.locally.com/stores/map.js?' + lcly_query_0;
     script.id = 'locally-widget';
-    document.getElementById('locally-root').appendChild(script);
+    document.getElementById(root).appendChild(script);
   };
 
   render(props) {
