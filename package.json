@@ -7,7 +7,7 @@
   "module": "dist/index.m.js",
   "source": "components/index.js",
   "scripts": {
-    "test": "NODE_ENV=test jest",
+    "test": "NODE_ENV=test jest --env=jsdom",
     "build": "preact build --no-prerender --clean --template src/index.html --service-worker false",
     "serve": "preact serve",
     "dev": "preact watch --template src/index.html",
@@ -20,11 +20,14 @@
     "eslint": "^4.5.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^21.2.1",
+    "jsdom": "^16.4.0",
     "microbundle": "^0.6.0",
     "node-sass": "^4.5.3",
     "preact-cli": "^2.0.2",
     "preact-render-to-string": "^3.7.0",
     "preact-widget-scripts": "^0.6.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
     "sass-loader": "^6.0.6"
   },
   "dependencies": {
@@ -61,6 +64,9 @@
     "moduleDirectories": [
       "node_modules",
       "src"
+    ],
+    "setupFiles": [
+      "./src/components/__mocks__/client.js"
     ]
   }
 }

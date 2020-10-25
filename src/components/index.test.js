@@ -2,17 +2,12 @@
 
 import { h } from "preact";
 import render from "preact-render-to-string";
-import Hello from "./index";
+import Locally from "./index";
 
-describe("Hello logic", () => {
-  it("should be able to run tests", () => {
-    expect(1 + 2).toEqual(3);
-  });
-});
-
-describe("Hello Snapshot", () => {
+describe("Locally Snapshot", () => {
   it("should render header with content", () => {
-    const tree = render(<Hello />);
+    // console.log(document.body);
+    const tree = render(<Locally upc={"686487414242"} countryCode={"en-CA"} root={"locally-widget-root"} />);
     expect(tree).toMatchSnapshot();
   });
 });

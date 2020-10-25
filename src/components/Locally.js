@@ -177,10 +177,12 @@ const embedStylesOverride = `
 
 export class Locally extends Component {
   constructor(props) {
+    console.log('constructor');
     super(props);
   }
 
   componentDidMount() {
+    console.table({upc: this.props.upc, countryCode: this.props.countryCode, root: this.props.root})
     this.loadLocallyWidget(this.props.upc, this.props.countryCode, this.props.root);
   }
 
@@ -195,11 +197,11 @@ export class Locally extends Component {
       "company_id": "31",
       "css": "4",
       "always_hide_button": "1",
-      "upc": this.props.upc,
+      "upc": upc,
       "n_related_styles": "3",
       "show_location_switcher": "1",
       "show_location_prompt": "1",
-      "lang": this.props.countryCode,
+      "lang": countryCode,
       "show_dealers": "1",
       "n_dealers": "3",
       "category": "arc",
@@ -217,7 +219,7 @@ export class Locally extends Component {
     document.getElementById(root).appendChild(script);
   };
 
-  render(props) {
+  render() {
     return (
       <div>
         <div id="lcly-button-0">
